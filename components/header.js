@@ -24,7 +24,7 @@ const Header = () => {
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'http://localhost:1337/api/header?populate=*',
+  url: 'https://sts-technical-service-backend.onrender.com/api/header?populate=*',
   headers: { }
 };
 
@@ -48,7 +48,7 @@ axios.request(config)
     <>
     <div className='flex flex-row justify-between items-center min-[1024px]:px-20 px-8 border-t-4 border-b border-b-gray-300 border-blue-600'>
         <div className='w-[200px] min-[768px]:translate-x-0 -translate-x-8'>
-            {imageData&&<Link href={"/"}><img src={"http://localhost:1337"+imageData} alt="logo"/></Link>}
+            {imageData&&<Link href={"/"}><img src={imageData} alt="logo"/></Link>}
         </div>
         <div className='min-[768px]:flex hidden flex-row justify-center items-center gap-5'>
             <Link href={"/"}><p className={router.pathname=="/"?activeClass:inactiveClass}>Home</p></Link>

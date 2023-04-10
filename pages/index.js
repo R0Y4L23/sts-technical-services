@@ -18,7 +18,7 @@ const Index = () => {
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'http://localhost:1337/api/landing?populate=*',
+  url: 'https://sts-technical-service-backend.onrender.com/api/landing?populate=*',
   headers: { }
 };
 
@@ -27,7 +27,7 @@ axios.request(config)
   let r=response.data.data.attributes
   setHeroTitle(r.hero_title)
   setHeroSubtitle(r.hero_subtitle)
-  setHeroImage('http://localhost:1337'+r.hero_image.data.attributes.url)
+  setHeroImage(r.hero_image.data.attributes.url)
   setMarqueeImages(r.marquee_images.data)
 })
 .catch((error) => {
@@ -70,62 +70,62 @@ axios.request(config)
       <div className='flex flex-row gap-10'>
       {marqueeImages.map((item,index)=>{
         return(
-          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+          <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
         )
       })}
        {marqueeImages.map((item,index)=>{
         return(
-          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+          <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
         )
       })}
        {marqueeImages.map((item,index)=>{
         return(
-          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+          <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
         )
       })}
        {marqueeImages.map((item,index)=>{
         return(
-          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+          <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
         )
       })}
        {marqueeImages.map((item,index)=>{
         return(
-          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+          <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
         )
       })}
        {marqueeImages.map((item,index)=>{
         return(
-          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+          <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
         )
       })}
        {marqueeImages.map((item,index)=>{
         return(
-          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+          <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
         )
       })}
        {marqueeImages.map((item,index)=>{
         return(
-          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+          <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
         )
       })}
        {marqueeImages.map((item,index)=>{
         return(
-          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+          <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
         )
       })}
        {marqueeImages.map((item,index)=>{
         return(
-          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+          <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
         )
       })}
        {marqueeImages.map((item,index)=>{
         return(
-          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+          <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
         )
       })}
        {marqueeImages.map((item,index)=>{
         return(
-          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+          <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
         )
       })}
     </div>

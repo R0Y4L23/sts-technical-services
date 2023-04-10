@@ -13,7 +13,7 @@ const Clients = () => {
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'http://localhost:1337/api/client?populate=*',
+  url: 'https://sts-technical-service-backend.onrender.com/api/client?populate=*',
   headers: { }
 };
 
@@ -43,7 +43,7 @@ axios.request(config)
     <div className='grid min-[1024px]:grid-cols-3 min-[610px]:grid-cols-2 grid-cols-1 min-[425px]:my-20 my-10 min-[425px]:gap-y-10 gap-y-5'>
       {client.map((item,index)=>{
         return(
-          <img key={index} src={"http://localhost:1337"+item.attributes.url} alt='client' className='min-[425px]:w-[300px] w-[200px] h-[200px] mx-auto'/>
+          <img key={index} src={item.attributes.url} alt='client' className='min-[425px]:w-[300px] w-[200px] h-[200px] mx-auto'/>
         )
       })}
     </div>

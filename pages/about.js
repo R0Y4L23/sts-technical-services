@@ -17,7 +17,7 @@ const About = () => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: "http://localhost:1337/api/about?populate=*",
+      url: "https://sts-technical-service-backend.onrender.com/api/about?populate=*",
       headers: {},
     };
 
@@ -30,7 +30,7 @@ const About = () => {
         setDescription2(r.description2);
         setDescription3(r.description3);
         setSubheading(r.subheading);
-        setPerson("http://localhost:1337" + r.person.data.attributes.url);
+        setPerson( r.person.data.attributes.url);
         setName(r.name);
         setQuotes(r.quotes);
       })

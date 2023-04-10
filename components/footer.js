@@ -11,7 +11,7 @@ const Footer = () => {
         let config = {
           method: 'get',
           maxBodyLength: Infinity,
-          url: 'http://localhost:1337/api/header?populate=*',
+          url: 'https://sts-technical-service-backend.onrender.com/api/header?populate=*',
           headers: { }
         };
         
@@ -37,7 +37,7 @@ const Footer = () => {
         <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
                 <Link href="/" className="flex min-[330px]:flex-row flex-col min-[330px]:items-center items-start">
-                    <img src={"http://localhost:1337"+imageData} className="mr-3 min-[400px]:h-8 h-12" alt="Logo" />
+                    <img src={imageData} className="mr-3 min-[400px]:h-8 h-12" alt="Logo" />
                     <span className="min-[330px]:self-center min-[410px]:text-2xl text-lg font-semibold whitespace-nowrap">STS Technical Services L.L.C.</span>
                 </Link>
             </div>
