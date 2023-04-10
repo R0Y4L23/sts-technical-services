@@ -1,124 +1,138 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+/* eslint-disable @next/next/no-img-element */
+import React,{useState,useEffect} from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
 
-const inter = Inter({ subsets: ['latin'] })
+import axios from 'axios'
 
-export default function Home() {
+const Index = () => {
+
+  const [heroTitle,setHeroTitle]=useState("")
+  const [heroSubtitle,setHeroSubtitle]=useState("")
+  const [heroImage,setHeroImage]=useState("")
+  const [marqueeImages,setMarqueeImages]=useState([])
+
+
+  const getData=()=>{
+
+let config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'http://localhost:1337/api/landing?populate=*',
+  headers: { }
+};
+
+axios.request(config)
+.then((response) => {
+  let r=response.data.data.attributes
+  setHeroTitle(r.hero_title)
+  setHeroSubtitle(r.hero_subtitle)
+  setHeroImage('http://localhost:1337'+r.hero_image.data.attributes.url)
+  setMarqueeImages(r.marquee_images.data)
+})
+.catch((error) => {
+  console.log(error);
+});
+
+  }
+
+  useEffect(()=>{
+    getData()
+  },[])
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+    <Head>
+      <title>
+        STS Technical Services L.L.C
+      </title>
+    </Head>
+    <div className='flex flex-col'>
+    <section className="bg-white">
+    <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div className="mr-auto place-self-center lg:col-span-7">
+            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">{heroTitle}</h1>
+            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">{heroSubtitle}</p>
+            <Link href="/services" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100">
+                Our Services
+            </Link> 
+            <Link href="/projects" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 ml-5">
+                Our Projects
+            </Link> 
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img src={heroImage} alt="hero"/>
+        </div>                
+    </div>
+    </section>
+    <marquee className="min-[410px]:w-[80%] w-[98%] mx-auto mb-20" scrollamount={5}>
+      <div className='flex flex-row gap-10'>
+      {marqueeImages.map((item,index)=>{
+        return(
+          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+        )
+      })}
+       {marqueeImages.map((item,index)=>{
+        return(
+          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+        )
+      })}
+       {marqueeImages.map((item,index)=>{
+        return(
+          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+        )
+      })}
+       {marqueeImages.map((item,index)=>{
+        return(
+          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+        )
+      })}
+       {marqueeImages.map((item,index)=>{
+        return(
+          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+        )
+      })}
+       {marqueeImages.map((item,index)=>{
+        return(
+          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+        )
+      })}
+       {marqueeImages.map((item,index)=>{
+        return(
+          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+        )
+      })}
+       {marqueeImages.map((item,index)=>{
+        return(
+          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+        )
+      })}
+       {marqueeImages.map((item,index)=>{
+        return(
+          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+        )
+      })}
+       {marqueeImages.map((item,index)=>{
+        return(
+          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+        )
+      })}
+       {marqueeImages.map((item,index)=>{
+        return(
+          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+        )
+      })}
+       {marqueeImages.map((item,index)=>{
+        return(
+          <img key={index} src={'http://localhost:1337'+item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md'/>
+        )
+      })}
+    </div>
+    </marquee>
+    </div>
+    </>
   )
 }
+
+export default Index
