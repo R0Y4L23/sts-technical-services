@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "current_password_components",
+  "info": {
+    "singularName": "current-password-component",
+    "pluralName": "current-password-components",
+    "displayName": "current_project_component",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "client": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "text"
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
