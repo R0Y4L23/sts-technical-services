@@ -40,7 +40,7 @@ const Projects = () => {
     <div className='grid min-[940px]:grid-cols-3 min-[768px]:grid-cols-2 grid-cols-1 justify-center items-center min-[425px]:gap-y-16 gap-y-8 mt-10 mb-20'>
   {projects.map((item,index)=>{
     return(
-      <ServiceCard key={index} id={item.id} image={item.attributes.thumbnail.data.attributes.url} name={item.attributes.name}/>
+      <ServiceCard key={index} id={item.id} image={item.attributes.thumbnail.data.attributes.url} name={item.attributes.name} type={"projects"}/>
     )
   })}
 </div>
@@ -48,7 +48,7 @@ const Projects = () => {
     <div className='grid min-[940px]:grid-cols-3 min-[768px]:grid-cols-2 grid-cols-1 justify-center items-center min-[425px]:gap-y-16 gap-y-8 mt-10 mb-20'>
   {projects.map((item,index)=>{
     return(
-      <ServiceCard key={index} id={item.id} image={item.attributes.thumbnail.data.attributes.url} name={item.attributes.name}/>
+      <ServiceCard key={index} id={item.id} image={item.attributes.thumbnail.data.attributes.url} name={item.attributes.name} type={"projects"}/>
     )
   })}
 </div>

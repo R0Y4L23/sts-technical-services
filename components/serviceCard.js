@@ -2,7 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-const ServiceCard = ({image,name,id}) => {
+const ServiceCard = ({image,name,id,type}) => {
   return (
    
     <div className='min-[1260px]:w-[400px] min-[1260px]:h-[300px] w-[300px] h-[200px] mx-auto relative group'>
