@@ -12,7 +12,6 @@ const Index = () => {
   const [heroImage,setHeroImage]=useState("")
   const [marqueeImages,setMarqueeImages]=useState([])
 
-
   const getData=()=>{
 
 let config = {
