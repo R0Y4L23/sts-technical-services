@@ -24,10 +24,10 @@
     "quotes": {
       "type": "text"
     },
-    "name": {
+    "managing_director_name": {
       "type": "string"
     },
-    "person": {
+    "managing_director_image": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -43,6 +43,45 @@
     },
     "description3": {
       "type": "text"
+    },
+    "operations_manager_name": {
+      "type": "string"
+    },
+    "operations_manager_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "financial_manager_name": {
+      "type": "string"
+    },
+    "financial_manager_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "general_manager_name": {
+      "type": "string"
+    },
+    "general_manager_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
