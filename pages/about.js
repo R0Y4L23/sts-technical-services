@@ -81,18 +81,22 @@ const About = () => {
         <Head>
           <title>About Us</title>
         </Head>
-        <p className="text-center font-extrabold text-6xl tracking-tight mt-10 mb-10">
+        <p className="text-center font-extrabold text-6xl tracking-tight mt-10 mb-10 rubik">
           {heading}
         </p>
         <div className="w-[80%] mx-auto px-4">
-          <p className="text-center tracking-wider my-4">{description1}</p>
-          <p className="text-center tracking-wider my-4">{description2}</p>
-          <p className="text-center tracking-wider my-4">{description3}</p>
-          <p className="text-center font-bold text-4xl tracking-tight mt-24 mb-20">
+          <p className="text-center tracking-wider my-4 inter">{description1}</p>
+          <p className="text-center tracking-wider my-4 inter">{description2}</p>
+          <p className="text-center tracking-wider my-4 inter">{description3}</p>
+          <p className="text-center font-bold text-4xl tracking-tight mt-24 mb-20 oswald">
             Our Managers
           </p>
 
           <div className="flex min-[768px]:flex-row flex-col justify-center items-center min-[1440px]:gap-32 min-[1024px]:gap-20 gap-12 mb-32">
+            <div>
+              <img src={gmi} alt="About" className="min-[1440px]:w-[320px] min-[1440px]:h-[320px] min-[1440px]:rounded-[160px] min-[1024px]:h-[250px] min-[1024px]:w-[250px] min-[1024px]:rounded-[125px] h-[180px] w-[180px] rounded-[90px] mx-auto" />
+              <p className="mt-5 text-xl text-center italic">{gm} , General Manager</p>
+            </div>
             <div>
               <img src={omi} alt="About" className="min-[1440px]:w-[320px] min-[1440px]:h-[320px] min-[1440px]:rounded-[160px] min-[1024px]:h-[250px] min-[1024px]:w-[250px] min-[1024px]:rounded-[125px] h-[180px] w-[180px] rounded-[90px] mx-auto" />
               <p className="mt-5 text-xl text-center italic">{om} , Operations Manager</p>
@@ -101,14 +105,9 @@ const About = () => {
               <img src={fmi} alt="About" className="min-[1440px]:w-[320px] min-[1440px]:h-[320px] min-[1440px]:rounded-[160px] min-[1024px]:h-[250px] min-[1024px]:w-[250px] min-[1024px]:rounded-[125px] h-[180px] w-[180px] rounded-[90px] mx-auto" />
               <p className="mt-5 text-xl text-center italic">{fm} , Financial Manager</p>
             </div>
-            <div>
-              <img src={gmi} alt="About" className="min-[1440px]:w-[320px] min-[1440px]:h-[320px] min-[1440px]:rounded-[160px] min-[1024px]:h-[250px] min-[1024px]:w-[250px] min-[1024px]:rounded-[125px] h-[180px] w-[180px] rounded-[90px] mx-auto" />
-              <p className="mt-5 text-xl text-center italic">{gm} , General Manager</p>
-            </div>
-
           </div>
 
-          <p className="text-center font-bold text-4xl tracking-tight mt-24 mb-20">
+          <p className="text-center font-bold text-4xl tracking-tight mt-24 mb-20 oswald">
             {subheading}
           </p>
           <div className="w-full flex flex-col md:flex-row justify-center items-center mb-16">

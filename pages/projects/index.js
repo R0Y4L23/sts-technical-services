@@ -70,7 +70,7 @@ const Projects = () => {
             Our Projects
           </title>
         </Head>
-        <p className='text-center font-extrabold min-[425px]:text-6xl text-4xl tracking-tight mt-10'>Current Projects</p>
+        <p className='text-center font-extrabold min-[425px]:text-6xl text-4xl tracking-tight mt-10 rubik'>Current Projects</p>
         <div className='grid min-[940px]:grid-cols-3 min-[768px]:grid-cols-2 grid-cols-1 justify-center items-center min-[425px]:gap-y-16 gap-y-8 mt-10 mb-20'>
           {currentProjects.map((item, index) => {
             return (
@@ -78,7 +78,7 @@ const Projects = () => {
             )
           })}
         </div>
-        <p className='text-center font-extrabold min-[425px]:text-6xl text-4xl tracking-tight mt-10'>Past Projects</p>
+        <p className='text-center font-extrabold min-[425px]:text-6xl text-4xl tracking-tight mt-10 rubik'>Past Projects</p>
         <div className='grid min-[940px]:grid-cols-3 min-[768px]:grid-cols-2 grid-cols-1 justify-center items-center min-[425px]:gap-y-16 gap-y-8 mt-10 mb-20'>
           {projects.map((item, index) => {
             return (

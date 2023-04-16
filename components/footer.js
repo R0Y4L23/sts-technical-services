@@ -47,7 +47,7 @@ const Footer = () => {
                     <div className="mb-6 md:mb-0">
                         <Link href="/" className="flex min-[330px]:flex-row flex-col min-[330px]:items-center items-start">
                             <img src={imageData} className="mr-3 min-[400px]:h-8 h-12" alt="Logo" />
-                            <span className="min-[330px]:self-center min-[410px]:text-2xl text-lg font-semibold whitespace-nowrap">STS Technical Services L.L.C.</span>
+                            <span className="min-[330px]:self-center min-[410px]:text-2xl text-lg font-semibold whitespace-nowrap oswald">STS Technical Services L.L.C.</span>
                         </Link>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
