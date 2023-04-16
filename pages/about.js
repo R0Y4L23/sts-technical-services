@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import Head from "next/head";
 import axios from "axios";
 import Loader from "@/components/loader";
@@ -23,6 +23,9 @@ const About = () => {
 
   const [gm, setGm] = useState("")
   const [gmi, setGmi] = useState("")
+
+  const [ceo, setCeo] = useState("")
+  const [ceoi, setCeoi] = useState("")
 
 
   const [loading, setLoading] = useState(true)
@@ -52,10 +55,12 @@ const About = () => {
         setOm(r.operations_manager_name)
         setFm(r.financial_manager_name)
         setGm(r.general_manager_name)
+        setCeo(r.ceo_name)
 
         setOmi(r.operations_manager_image.data.attributes.url)
         setFmi(r.financial_manager_image.data.attributes.url)
         setGmi(r.general_manager_image.data.attributes.url)
+        setCeoi(r.ceo_image.data.attributes.url)
 
         setLoading(false)
       })
@@ -104,6 +109,18 @@ const About = () => {
             <div>
               <img src={fmi} alt="About" className="min-[1440px]:w-[320px] min-[1440px]:h-[320px] min-[1440px]:rounded-[160px] min-[1024px]:h-[250px] min-[1024px]:w-[250px] min-[1024px]:rounded-[125px] h-[180px] w-[180px] rounded-[90px] mx-auto" />
               <p className="mt-5 text-xl text-center italic">{fm} , Financial Manager</p>
+            </div>
+          </div>
+
+
+          <p className="text-center font-bold text-4xl tracking-tight mt-24 mb-20 oswald">
+            Our Chief Executive Officer
+          </p>
+
+          <div className="flex min-[768px]:flex-row flex-col justify-center items-center min-[1440px]:gap-32 min-[1024px]:gap-20 gap-12 mb-32">
+            <div>
+              <img src={ceoi} alt="About" className="min-[1440px]:w-[320px] min-[1440px]:h-[320px] min-[1440px]:rounded-[160px] min-[1024px]:h-[250px] min-[1024px]:w-[250px] min-[1024px]:rounded-[125px] h-[180px] w-[180px] rounded-[90px] mx-auto" />
+              <p className="mt-5 text-xl text-center italic">{ceo} , Cheif Executive Officer</p>
             </div>
           </div>
 

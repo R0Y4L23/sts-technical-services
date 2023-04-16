@@ -7,7 +7,7 @@ const ServiceCard = ({ image, name, id, type }) => {
 
     <div className='min-[1260px]:w-[400px] min-[1260px]:h-[300px] w-[300px] h-[200px] mx-auto relative group'>
       <Link
-        href={type == "services" ? "/" + type + "/" + id : "#"}
+        href={"/" + type + "/" + id}
       //href={"#"}
       >
         <img src={image} className='w-full h-full rounded-lg' alt='service' />

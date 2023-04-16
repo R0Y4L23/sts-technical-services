@@ -53,10 +53,10 @@ const Clients = () => {
           </title>
         </Head>
         <p className='text-center font-extrabold min-[425px]:text-6xl text-4xl tracking-tight mt-10 rubik'>{heading}</p>
-        <div className='grid min-[1024px]:grid-cols-3 min-[610px]:grid-cols-2 grid-cols-1 min-[425px]:my-20 my-10 min-[425px]:gap-y-10 gap-y-5'>
+        <div className='grid min-[1024px]:grid-cols-3 min-[610px]:grid-cols-2 grid-cols-1 min-[425px]:my-20 my-10 min-[425px]:gap-y-10 gap-y-6'>
           {client.map((item, index) => {
             return (
-              <img key={index} src={item.attributes.url} alt='client' className='min-[425px]:w-[300px] w-[200px] h-[200px] mx-auto' />
+              <img key={index} src={item.attributes.url} alt='client' className='min-[425px]:w-[300px] w-[250px] h-[200px] mx-auto' />
             )
           })}
         </div>

@@ -13,7 +13,21 @@ const Index = () => {
   const [heroImage, setHeroImage] = useState("")
   const [marqueeImages, setMarqueeImages] = useState([])
 
+  const [licenseHeading, setLicenseHeading] = useState("")
+  const [licenseDescription, setLicenseDescription] = useState("")
+  const [brochure, setBrochure] = useState("")
+  const [license, setLicense] = useState("")
+  const [certificate, setCertificate] = useState("")
+
   const [loading, setLoading] = useState(true)
+
+  const multiplyArray = (arr, m) => {
+    let out = []
+    for (let i = 0; i < m; i++) {
+      out.push(...arr);
+    }
+    return out
+  }
 
   const getData = () => {
 
@@ -31,6 +45,11 @@ const Index = () => {
         setHeroSubtitle(r.hero_subtitle)
         setHeroImage(r.hero_image.data.attributes.url)
         setMarqueeImages(r.marquee_images.data)
+
+        setLicenseHeading(r.license_heading)
+        setLicenseDescription(r.license_description)
+        setLicense(r.license_image.data.attributes.url)
+        setCertificate(r.certification_image.data.attributes.url)
 
         setLoading(false)
       })
@@ -75,64 +94,22 @@ const Index = () => {
               </div>
             </div>
           </section>
+          <div className="w-full bg-gray-100 min-[1024px]:my-40 min-[540px]:my-20 my-10 flex min-[1024px]:flex-row flex-col justify-center pt-20 pb-20 min-[1440px]:h-[350px] min-[1024px]:h-[500px] items-center">
+            <div className="min-[1024px]:w-[45%] w-[90%] min-[540px]:mb-0 mb-10">
+              <p className="text-4xl font-extrabold tracking-tight leading-none rubik min-[540px]:text-left text-center">{licenseHeading}</p>
+              <p className="mt-10 inter min-[768px]:pr-32 min-[540px]:pr-12 min-[540px]:text-left text-center">{licenseDescription}</p>
+              <Link href="/assets/brochure.pdf" className="mt-10 inline-flex min-[540px]:ml-0 min-[375px]:ml-[27%] ml-[20%] font-mono items-center justify-center px-5 py-3 text-lg font-semibold text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-200 focus:ring-4 focus:ring-gray-100">
+                Our Brochure
+              </Link>
+            </div>
+            <div className='min-[1024px]:w-[45%] w-[90%] flex min-[540px]:flex-row flex-col justify-center items-center gap-10'>
+              <img src={license} alt="index" className="min-[540px]:w-[45%] w-[90%] border border-black translate-y-5" />
+              <img src={certificate} alt="index" className="min-[540px]:w-[45%] w-[90%] border border-black" />
+            </div>
+          </div>
           <marquee className="min-[410px]:w-[90%] w-[98%] mx-auto mb-20" scrollamount={5}>
             <div className='flex flex-row gap-10'>
-              {marqueeImages.map((item, index) => {
-                return (
-                  <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md' />
-                )
-              })}
-              {marqueeImages.map((item, index) => {
-                return (
-                  <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md' />
-                )
-              })}
-              {marqueeImages.map((item, index) => {
-                return (
-                  <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md' />
-                )
-              })}
-              {marqueeImages.map((item, index) => {
-                return (
-                  <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md' />
-                )
-              })}
-              {marqueeImages.map((item, index) => {
-                return (
-                  <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md' />
-                )
-              })}
-              {marqueeImages.map((item, index) => {
-                return (
-                  <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md' />
-                )
-              })}
-              {marqueeImages.map((item, index) => {
-                return (
-                  <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md' />
-                )
-              })}
-              {marqueeImages.map((item, index) => {
-                return (
-                  <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md' />
-                )
-              })}
-              {marqueeImages.map((item, index) => {
-                return (
-                  <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md' />
-                )
-              })}
-              {marqueeImages.map((item, index) => {
-                return (
-                  <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md' />
-                )
-              })}
-              {marqueeImages.map((item, index) => {
-                return (
-                  <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md' />
-                )
-              })}
-              {marqueeImages.map((item, index) => {
+              {multiplyArray(marqueeImages, 10).map((item, index) => {
                 return (
                   <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md' />
                 )
