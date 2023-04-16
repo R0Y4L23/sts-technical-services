@@ -30,6 +30,23 @@
       ]
     },
     "marquee_images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "license_heading": {
+      "type": "string"
+    },
+    "license_description": {
+      "type": "text"
+    },
+    "license_image": {
       "allowedTypes": [
         "images",
         "files",
@@ -37,7 +54,27 @@
         "audios"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
+    },
+    "certification_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "brochure": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
