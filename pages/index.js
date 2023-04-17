@@ -103,7 +103,9 @@ const Index = () => {
               </Link>
             </div>
             <div className='min-[1024px]:w-[45%] w-[90%] flex min-[540px]:flex-row flex-col justify-center items-center gap-10'>
+              <p className='min-[540px]:hidden text-center text-lg inte underline -mb-5'>License</p>
               <img src={license} alt="index" className="min-[540px]:w-[45%] w-[90%] border border-black translate-y-5" />
+              <p className='min-[540px]:hidden text-center text-lg inter underline'>Certificate</p>
               <img src={certificate} alt="index" className="min-[540px]:w-[45%] w-[90%] border border-black" />
             </div>
           </div>
