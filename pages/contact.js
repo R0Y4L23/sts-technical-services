@@ -16,14 +16,32 @@ const Contact = () => {
   const [nameContact, setNameContact] = useState("")
   const [messageContact, setMessageContact] = useState("")
 
-
   const [loading, setLoading] = useState(true)
 
   const submit = () => {
-    setNameContact("")
-    setEmailContact("")
-    setMessageContact("")
-    message.success("Your Message Has Been Submitted Successfully")
+
+    let data = {
+      name:nameContact,
+      email:emailContact,
+      message:messageContact
+    }
+
+  fetch('/api/sendemail', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }).then((res) => {
+    }).catch((e)=>{
+      message.error('Error : '+e.message)
+    })
+
+    setNameContact('')
+    setEmailContact('')
+    setMessageContact('')
+    message.success("Your Message Has Been Submitted Successfully")  
   }
 
   const getData = () => {
