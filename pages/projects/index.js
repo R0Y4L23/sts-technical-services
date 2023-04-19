@@ -3,6 +3,7 @@ import Head from 'next/head'
 import axios from 'axios'
 import ServiceCard from '@/components/serviceCard'
 import Loader from '@/components/loader'
+import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const Projects = () => {
 
@@ -70,7 +71,7 @@ const Projects = () => {
             Our Projects
           </title>
         </Head>
-        <p className='text-center font-extrabold min-[425px]:text-6xl text-4xl tracking-tight mt-10 rubik'>Current Projects</p>
+        <p className='text-center font-extrabold min-[425px]:text-6xl text-4xl tracking-tight mt-10 rubik animate__animated animate__fadeIn'>Current Projects</p>
         <div className='grid min-[940px]:grid-cols-3 min-[768px]:grid-cols-2 grid-cols-1 justify-center items-center min-[425px]:gap-y-16 gap-y-8 mt-10 mb-20'>
           {currentProjects.map((item, index) => {
             return (
@@ -78,14 +79,14 @@ const Projects = () => {
             )
           })}
         </div>
-        <p className='text-center font-extrabold min-[425px]:text-6xl text-4xl tracking-tight mt-10 rubik'>Past Projects</p>
-        <div className='grid min-[940px]:grid-cols-3 min-[768px]:grid-cols-2 grid-cols-1 justify-center items-center min-[425px]:gap-y-16 gap-y-8 mt-10 mb-20'>
+        <AnimationOnScroll animateIn='animate__fadeInDown' className='text-center font-extrabold min-[425px]:text-6xl text-4xl tracking-tight mt-10 rubik'>Past Projects</AnimationOnScroll>
+        <AnimationOnScroll animateIn='animate__fadeInUp' className='grid min-[940px]:grid-cols-3 min-[768px]:grid-cols-2 grid-cols-1 justify-center items-center min-[425px]:gap-y-16 gap-y-8 mt-10 mb-20'>
           {projects.map((item, index) => {
             return (
               <ServiceCard key={index} id={item.id} image={item.attributes.thumbnail.data.attributes.url} name={item.attributes.name} type={"projects"} />
             )
           })}
-        </div>
+        </AnimationOnScroll>
       </>
     )
   }

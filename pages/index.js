@@ -6,6 +6,8 @@ import Link from 'next/link'
 import axios from 'axios'
 import Loader from '@/components/loader'
 
+import {AnimationOnScroll} from "react-animation-on-scroll"
+
 const Index = () => {
 
   const [heroTitle, setHeroTitle] = useState("")
@@ -77,7 +79,7 @@ const Index = () => {
           </title>
         </Head>
         <div className='flex flex-col'>
-          <section className="bg-white">
+          <section className="bg-white animate__animated animate__fadeInUp">
             <div className="grid w-[90%] px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
               <div className="mr-auto place-self-center lg:col-span-7">
                 <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl rubik">{heroTitle}</h1>
@@ -94,7 +96,7 @@ const Index = () => {
               </div>
             </div>
           </section>
-          <div className="w-full bg-gray-100 min-[1024px]:my-40 min-[540px]:my-20 my-10 flex min-[1024px]:flex-row flex-col justify-center pt-20 pb-20 min-[1440px]:h-[350px] min-[1024px]:h-[500px] items-center">
+          <AnimationOnScroll animateIn={"animate__fadeInDown"} className="w-full bg-gray-100 min-[1024px]:my-40 min-[540px]:my-20 my-10 flex min-[1024px]:flex-row flex-col justify-center pt-20 pb-20 min-[1440px]:h-[350px] min-[1024px]:h-[500px] items-center">
             <div className="min-[1024px]:w-[45%] w-[90%] min-[540px]:mb-0 mb-10">
               <p className="text-4xl font-extrabold tracking-tight leading-none rubik min-[540px]:text-left text-center">{licenseHeading}</p>
               <p className="mt-10 inter min-[768px]:pr-32 min-[540px]:pr-12 min-[540px]:text-left text-center">{licenseDescription}</p>
@@ -108,15 +110,15 @@ const Index = () => {
               <p className='min-[540px]:hidden text-center text-lg inter underline'>Certificate</p>
               <img src={certificate} alt="index" className="min-[540px]:w-[45%] w-[90%] border border-black" />
             </div>
-          </div>
+          </AnimationOnScroll>
           <marquee className="min-[410px]:w-[90%] w-[98%] mx-auto mb-20" scrollamount={5}>
-            <div className='flex flex-row gap-10'>
+            <AnimationOnScroll animateIn='animate__fadeInRight' className='flex flex-row gap-10'>
               {multiplyArray(marqueeImages, 10).map((item, index) => {
                 return (
                   <img key={index} src={item.attributes.url} alt="hero" className='w-[200px] h-[150px] border border-gray-400 rounded-md' />
                 )
               })}
-            </div>
+            </AnimationOnScroll>
           </marquee>
         </div>
       </>

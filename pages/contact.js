@@ -88,8 +88,8 @@ const Contact = () => {
             Contact Us
           </title>
         </Head>
-        <p className='text-center font-extrabold min-[425px]:text-6xl text-4xl tracking-tight mt-10 rubik mb-20'>Contact Us</p>
-        <section className="text-gray-600 body-font relative mb-10">
+        <p className='text-center font-extrabold min-[425px]:text-6xl text-4xl tracking-tight mt-10 rubik mb-20 animate__animated animate__fadeIn'>Contact Us</p>
+        <section className="text-gray-600 body-font relative mb-10 animate__animated animate__bounceIn">
           <div className="container px-5 py-5 mx-auto flex sm:flex-nowrap flex-wrap">
             <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
               <iframe width="100%" height="100%" className="absolute inset-0" src={map}></iframe>
