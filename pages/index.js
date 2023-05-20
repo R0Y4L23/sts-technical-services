@@ -111,6 +111,29 @@ const Index = () => {
               <img src={certificate} alt="index" className="min-[540px]:w-[45%] w-[90%] border border-black" />
             </div>
           </AnimationOnScroll>
+          <p className='text-center text-5xl min-[768px]:px-0 px-10 rubik min-[768px]:-mt-5 mt-10 mmin-[768px]:mb-24 mb-12 font-semibold'>Why Should You Work With Us?</p>
+          <AnimationOnScroll animateIn={"animate__fadeInDown"} className='grid min-[768px]:grid-cols-2 grid-cols-1 mb-20 gap-y-14'>
+            <div className='min-[1024px]:px-28 min-[425px]:px-16 px-5'>
+              <p className='text-center text-5xl'><i className="fa-solid fa-award"></i></p>
+              <p className='text-center text-3xl mt-5 mb-8 rubik'>Experience and Expertise</p>
+              <p className='text-center inter'>STS Technical Services LLC has been in the industry for many years and has a wealth of experience and expertise in the field of construction and MEP services. Our team of experts has the knowledge and skills required to handle projects of any size and complexity, ensuring that all our clients needs are met.</p>
+            </div>
+            <div className='min-[1024px]:px-28 min-[425px]:px-16 px-5'>
+            <p className='text-center text-5xl'><i className="fa-sharp fa-solid fa-circle-check"></i></p>
+              <p className='text-center text-3xl mt-5 mb-8 rubik'>Quality workmanship</p>
+              <p className='text-center inter'>At STS Technical Services LLC, we are committed to providing our clients with the highest quality workmanship. We use only the best materials and equipment, and we follow strict quality control procedures to ensure that our work meets the highest standards.</p>
+            </div>
+            <div className='min-[1024px]:px-28 min-[425px]:px-16 px-5'>
+            <p className='text-center text-5xl'><i className="fa-solid fa-clock"></i></p>
+              <p className='text-center text-3xl mt-5 mb-8 rubik'>Timely completion</p>
+              <p className='text-center inter'>We understand that time is of the essence when it comes to construction projects, which is why we always strive to complete our projects on time and within budget. Our team works diligently to ensure that all projects are completed on schedule, without compromising on quality.</p>
+            </div>
+            <div className='min-[1024px]:px-28 min-[425px]:px-16 px-5'>
+            <p className='text-center text-5xl'><i className="fa-solid fa-gears"></i></p>
+              <p className='text-center text-3xl mt-5 mb-8 rubik'>Comprehensive services</p>
+              <p className='text-center inter'>We provide a wide range of construction and MEP services, including mechanical system installation, fire fighting system installation, electrical system installation, and HVAC installation. This means that we can handle all aspects of your project, from start to finish, making the entire process hassle-free for you.</p>
+            </div>
+          </AnimationOnScroll>
           <marquee className="min-[410px]:w-[90%] w-[98%] mx-auto mb-20" scrollamount={5}>
             <AnimationOnScroll animateIn='animate__fadeInRight' className='flex flex-row gap-10'>
               {multiplyArray(marqueeImages, 10).map((item, index) => {
